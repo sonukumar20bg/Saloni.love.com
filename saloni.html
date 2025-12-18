@@ -1,0 +1,175 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Love Rain 💖</title>
+
+<style>
+body {
+    margin: 0;
+    padding: 0;
+    overflow: hidden;
+    background: linear-gradient(#000000, #330018, #55002f);
+    font-family: Arial, sans-serif;
+    color: #fff;
+    height: 100vh;
+}
+
+.float-text {
+    position: absolute;
+    font-size: 26px;
+    font-weight: bold;
+    opacity: 0.85;
+    animation: float 5s linear infinite;
+}
+
+@keyframes float {
+    0% { transform: translateY(100vh); opacity: 0; }
+    50% { opacity: 1; }
+    100% { transform: translateY(-10vh); opacity: 0; }
+}
+
+.emoji {
+    position: absolute;
+    top: -50px;
+    font-size: 34px;
+    animation: fall linear infinite;
+}
+
+@keyframes fall {
+    to { transform: translateY(120vh); }
+}
+
+#playBtn {
+    position: fixed;
+    bottom: 20px;
+    left: 20px;
+    padding: 12px 20px;
+    font-size: 18px;
+    border: none;
+    border-radius: 10px;
+    background: #ff0066;
+    color: white;
+    font-weight: bold;
+}
+</style>
+</head>
+
+<body>
+
+<!-- Background Music (LOCAL FILE) -->
+<audio id="bgm" src="song.mp3" loop></audio>
+
+<button id="playBtn" onclick="playMusic()">Play Music 🎵</button>
+
+<script>
+function playMusic() {
+    const a = document.getElementById("bgm");
+    a.play();
+    document.getElementById("playBtn").style.display = "none";
+}
+
+/* Emojis */
+const emojis = ["🥰","💖","🫣","🌹","🥀","🌺","🌷","🪷","🌸","💮","🏵️","💐"];
+
+const texts = [
+ "Busy insaan...❤️",
+ "Ladaku...💖",
+ "Gussa na ho... 🥺",
+ "You Are Special...🌹",
+ "I Miss You ...🥰",
+ "You Are My.... 💗"
+];
+
+function createText() {
+    const t = document.createElement("div");
+    t.className = "float-text";
+    t.innerText = texts[Math.floor(Math.random()*texts.length)];
+    t.style.left = Math.random()*80 + "vw";
+    t.style.animationDuration = 4 + Math.random()*3 + "s";
+    document.body.appendChild(t);
+    setTimeout(()=>t.remove(),6000);
+}
+setInterval(createText, 1500);
+
+function createEmoji() {
+    const e = document.createElement("div");
+    e.className = "emoji";
+    e.innerText = emojis[Math.floor(Math.random()*emojis.length)];
+    e.style.left = Math.random()*100 + "vw";
+    e.style.animationDuration = 2 + Math.random()*3 + "s";
+    document.body.appendChild(e);
+    setTimeout(()=>e.remove(),5000);
+}
+setInterval(createEmoji, 150);
+</script>
+
+</body>
+</html>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>Sorry Meri Jaan ❤️</title>
+<style>
+body{
+    margin:0;
+    height:100vh;
+    display:flex;
+    justify-content:center;
+    align-items:center;
+    background:linear-gradient(135deg,#ff9a9e,#fad0c4);
+    font-family: 'Segoe UI', sans-serif;
+    text-align:center;
+}
+.card{
+    background:white;
+    padding:30px;
+    border-radius:20px;
+    box-shadow:0 10px 25px rgba(0,0,0,0.2);
+    max-width:350px;
+}
+h1{color:#ff3366;}
+p{font-size:18px;}
+button{
+    background:#ff3366;
+    color:white;
+    border:none;
+    padding:12px 25px;
+    border-radius:25px;
+    font-size:16px;
+    cursor:pointer;
+}
+button:hover{
+    background:#e62e5c;
+}
+#msg{
+    margin-top:15px;
+    font-weight:bold;
+    color:#ff3366;
+}
+</style>
+</head>
+<body>
+
+<div class="card">
+    <h1>Sorry Meri Jaan 😔❤️</h1>
+    <p>
+        Mujhse galti ho gayi…  
+        Tum meri muskaan ho 💕  
+        Tum bina sab adhoora lagta hai 🥺
+    </p>
+    <button onclick="showLove()">Maaf Kar Do 🙈</button>
+    <div id="msg"></div>
+</div>
+
+<script>
+function showLove(){
+    document.getElementById("msg").innerHTML =
+    "Thank you jaan ❤️ Ab gussa chala gaya na? 🥰🌹";
+}
+</script>
+
+</body>
+</html>
